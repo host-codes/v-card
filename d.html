@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>v-Card | v-card</title>
+  <link rel="icon" href="v-card.png" type="image/x-icon">
+<link rel="shortcut icon" href="v-card.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> 
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css'>
+<style>
+	
+	.userpost {
+
+opacity:0;
+-webkit-transition: opacity 800ms ease-in;
+-moz-transition: opacity 800ms ease-in;
+transition: opacity 400ms ease-in;
+
+position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+}
+
+
+.userpost:target {
+opacity:1;}
+/*.userpost > div {
+width: 1000px;
+height:500px;
+position: relative;
+margin: 10% auto;
+padding: 5px 20px 13px 20px;
+
+} 
+
+.userpost > div {
+    width: fit-content;
+    height: 500px;
+    position: relative;
+    margin: 10% auto;
+    padding: 5px 20px 13px 20px;
+}*/
+</style>
+
+<style>
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+}
+
+
+
+
+
+
+.vcard {
+    padding: 6px;
+    /* flex: 0 0 auto; */
+    /* width: fit-content; */
+    /* background-color: #74857f36; */
+    /* border-radius: 8px; */
+    margin: 64px;
+    /* border: 2px solid #ffffff; */
+    /* box-shadow: 2px 0px 15px #6d6f72; */
+    /* background-image: linear-gradient(120deg, #6c6c6c 0%, #e5e5e561 100%); */
+} 
+
+
+.vcardtitle{
+color:#fff;
+}
+
+h1 {
+    font-family: "Lato", sans-serif;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    font-size: 48px;
+}
+.vcardheading {
+    font-size: 3rem;
+    color: #51ff77;
+    /* font-size: 1.1rem; */
+    font-weight: 800;
+    line-height: 2.5rem;
+}
+
+
+h3 {
+    font-size: 2rem;
+    color: #007cb7;
+    /* font-size: 1.1rem; */
+    font-weight: 800;
+    line-height: 2.5rem;
+}
+
+.profile-bio {
+    background-color: #f0f8ff21;
+    padding: 10px;
+    border-radius: 22px;
+    margin: 10px;
+    text-align: justify;
+    border: 4px solid #ffffff5e;
+    line-height: 3.5rem;font-weight: bolder;
+    color: white;
+}
+.profile-bio2{
+text-align: right;
+}
+
+@media (max-width: 731px){
+
+	
+	.profile-bio {
+      background-color: #f0f8ff21;
+    padding: 8px;
+    border-radius: 22px;
+    margin: 8px;
+    text-align: justify;
+    border: 4px solid #ffffff14;
+    line-height: 2.5rem;
+    margin-right: -44px;
+    margin-left: -37px;font-weight: bolder;
+    color: white;}
+}
+
+
+.col-4 {
+    /* position: relative; */
+    /* text-align: center; */
+    background: linear-gradient( 60deg, rgb(207 207 207) 0%, rgb(58 92 108) 100% );
+    /* color: white; */
+    /* padding: 6px; */
+    /* flex: 0 0 auto; */
+    /* width: fit-content; */
+    /* background-color: #74857f36; */
+    border-radius: 29px;
+    /* margin: 38px; */
+    border: 5px solid #ffffffd9;
+    box-shadow: inset -8px -7px 20px 6px #6d6f72;
+    /* background-image: linear-gradient(120deg, #6c6c6c 0%, #e5e5e561 100%); */
+    margin-top: 20px;
+}
+
+
+.vcardtitle, h2 {
+    font-size: 3rem;
+    color: #51ff77;
+    /* font-size: 1.1rem; */
+    font-weight: 800;
+    line-height: 9.5rem;
+}
+
+.vcardheading {
+     font-size: 4.2rem;
+    color: #fff;
+    /* font-size: 1.1rem; */
+    font-weight: 800;
+    line-height: 5.2rem;
+    font-family: system-ui;
+}
+
+
+
+
+
+
+.fa-whatsapp {
+    bottom: 10px;
+    left: 10px;
+    border-radius: 2px;
+    box-shadow: inset 1px 1px 16px 20px #25d366;
+    /* float: right; */
+    /* margin-top: 1px; */
+    border: 3px solid #d6f9e3a6;
+    height: 35px;
+    width: 35px;
+    text-align: center;
+    line-height: 31px;
+    background-color: #8ed9aa;
+    border-radius: 17px;
+}
+
+.fa-facebook {
+    bottom: 10px;
+    left: 10px;
+    border-radius: 2px;
+    box-shadow: inset 1px 1px 16px 20px #4267B2;
+    /* float: right; */
+    /* margin-top: 1px; */
+    border: 3px solid #c3d4f72b;
+    height: 35px;
+    width: 35px;
+    text-align: center;
+    line-height: 31px;
+    background-color: #bad1ff;
+    border-radius: 17px;
+}
+.fa-twitter {
+    bottom: 10px;
+    left: 10px;
+    border-radius: 2px;
+    box-shadow: inset 1px 1px 16px 20px #1DA1F2;
+    /* float: right; */
+    /* margin-top: 1px; */
+    border: 3px solid #db4a390a;
+    height: 35px;
+    width: 35px;
+    text-align: center;
+    line-height: 31px;
+    background-color: #83d0ff;
+    border-radius: 17px;
+}
+fa.fa-telegram {
+    bottom: 10px;
+    left: 10px;
+    border-radius: 2px;
+    box-shadow: inset 1px 1px 16px 20px #1d91cc;
+    /* float: right; */
+    /* margin-top: 1px; */
+    border: 3px solid #72bde3;
+    height: 35px;
+    width: 35px;
+    text-align: center;
+    line-height: 31px;
+    border-radius: 17px;
+}
+
+
+
+.fa-linkedin {
+    bottom: 10px;
+    left: 10px;
+    border-radius: 2px;
+    box-shadow: inset 1px 1px 16px 20px #0a66c2;
+    /* float: right; */
+    /* margin-top: 1px; */
+    border: 3px solid #72bde3;
+    height: 35px;
+    width: 35px;
+    text-align: center;
+    line-height: 31px;
+    border-radius: 17px;
+}
+
+.fa-instagram {
+    bottom: 10px;
+    left: 10px;
+    border-radius: 2px;
+    box-shadow: inset 1px 1px 16px 20px #c32aa3;
+    /* float: right; */
+    /* margin-top: 1px; */
+    border: 3px solid #e96dcf;
+    height: 35px;
+    width: 35px;
+    text-align: center;
+    line-height: 31px;
+    border-radius: 17px;
+}
+
+.fa-youtube-play {
+    bottom: 10px;
+    left: 10px;
+    border-radius: 2px;
+    box-shadow: inset 1px 1px 16px 20px #ffffff;
+    /* float: right; */
+    /* margin-top: 1px; */
+    border: 3px solid #ff6a6a;
+    height: 35px;
+    width: 35px;
+    text-align: center;
+    line-height: 31px;
+    border-radius: 17px;
+}
+
+</style>
+
+<style>
+
+.boxbottom {
+    --size: 50px;
+    --p: 25px;
+    --R: 55.9px /*sqrt(var(--size)*var(--size) + var(--p)*var(--p))*/;
+    height: 200px;
+    margin: 10px 0;
+    -webkit-mask: radial-gradient(var(--R) at left 50% var(--d,top) calc(var(--size) + var(--p)),#000 99%,#0000 101%) calc(50% - 2*var(--size)) 0/calc(4*var(--size)) 100%, radial-gradient(var(--R) at left 50% var(--d,top) calc(-1*var(--p)),#0000 99%,#625050 101%) left 50% var(--d,top) var(--size)/calc(4*var(--size)) 100% repeat-x;
+    background: linear-gradient(90deg,#000000,#718590);
+    border: none;
+    border-radius: 20px;
+}
+
+.boxbottom + .boxbottom {
+  --d: bottom;
+}
+
+
+
+.box {
+    --size: 50px;
+    --p: 25px;
+    --R: 55.9px /*sqrt(var(--size)*var(--size) + var(--p)*var(--p))*/;
+    height: 200px;
+    margin: 10px 0;
+    -webkit-mask: radial-gradient(var(--R) at left 50% var(--d,top) calc(var(--size) + var(--p)),#000 99%,#0000 101%) calc(50% - 2*var(--size)) 0/calc(4*var(--size)) 100%, radial-gradient(var(--R) at left 50% var(--d,top) calc(-1*var(--p)),#0000 99%,#625050 101%) left 50% var(--d,top) var(--size)/calc(4*var(--size)) 100% repeat-x;
+    background: linear-gradient(90deg,#000000,#718590);
+    border: none;
+    border-radius: 20px;
+}
+
+.box + .box{
+  --d: bottom;
+}
+
+
+
+</style>
+
+
+
+
+</head>
+<body>
+
+
+  
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3">
+      <h3></h3> 
+      
+
+    </div>
+
+     
+	  
+	  
+	  
+	  
+	  
+	      <div class="col-sm-6" style="background-color:#2b972c;">
+		  
+		
+		  
+		  
+		  
+	    	  <script>
+function _0x19e5(_0x365ebf,_0x4403fb){var _0x12b820=_0x12b8();return _0x19e5=function(_0x19e5c7,_0x2d2381){_0x19e5c7=_0x19e5c7-0x1ee;var _0x3c9327=_0x12b820[_0x19e5c7];return _0x3c9327;},_0x19e5(_0x365ebf,_0x4403fb);}function _0x12b8(){var _0x5a4249=['37910lpxneN','write','readyState','\x20<br>','1018446IdmLIR','\x20<h3><i\x20class=\x22fa\x20fa-share-square\x22style=\x22font-size:20px;color:#ffffff;\x22></i>&nbsp;&nbsp;Social\x20Connect</h3>','<span\x20class=\x22fa\x20fa-envelope\x22\x20style=\x22font-size:20px;color:#40f6ff;\x22></span>\x20&nbsp;&nbsp;','\x20target=\x22_blank\x22\x20class=\x22card-togglepp\x22><i><span\x20class=\x22fa\x20fa-linkedin\x22\x20style=\x22font-size:20px;color:#ffffff;\x22></span></i></a>&nbsp;&nbsp;&nbsp;&nbsp;','\x20<div\x20class=\x22vcardtitle\x22>','Email','\x20target=\x22_blank\x22class=\x22card-togglepp\x22><i><span\x20class=\x22fa\x20fa-facebook\x22\x20style=\x22font-size:20px;color:#ffffff;\x22></span></i></a>&nbsp;&nbsp;&nbsp;&nbsp;','341832AyVqhL','<span\x20class=\x22fa\x20fa-phone\x22\x20style=\x22font-size:20px;color:#40f6ff;\x22></span>&nbsp;&nbsp;\x20','Profile_Image','open','responseText','</h2>','<a\x20href=','\x20<h3><i\x20class=\x22fa\x20fa-user\x22style=\x22font-size:20px;color:#ffffff;\x22></i>&nbsp;&nbsp;','151647VzGzBi','\x20target=\x22_blank\x22class=\x22card-togglepp\x22><i><span\x20class=\x22fa\x20fa-youtube-play\x22\x20style=\x22font-size:20px;color:#ff0000;\x22></span></i></a>&nbsp;&nbsp;&nbsp;&nbsp;','\x20</div>','\x20<h2><i\x20class=\x22fa\x20fa-briefcase\x22\x20style=\x22font-size:20px;color:#ffffff;\x22></i>\x20&nbsp;&nbsp;','\x20<h1\x20class\x20=\x22vcardheading\x22>\x20','Mobile_No','</div>','\x20class=\x22userpost\x22>','\x20target=\x22_blank\x22class=\x22card-togglepp\x22><i><span\x20class=\x22fa\x20fa-instagram\x22\x20style=\x22font-size:20px;color:#ffffff;\x22></span></i></a>&nbsp;&nbsp;&nbsp;&nbsp;','Address','onreadystatechange','<div\x20class=\x22col-4\x22\x20style=\x22background-color:pink;\x22>','466184KBZujs','send','Instagram','\x20<div\x20class=\x22profile-bio\x22>','65WEcMbk','5045580AsigEv','11912bRRpkc','<span\x20class=\x22fa\x20fa-map-marker\x22\x20style=\x22font-size:20px;color:#40f6ff;\x22></span>&nbsp;&nbsp;\x20','18zvArCl','<span\x20class=\x22fa\x20fa-whatsapp\x22\x20style=\x22font-size:20px;color:#ffffff;\x22></span>&nbsp;&nbsp;','<span\x20class=\x22fa\x20fa-whatsapp\x22\x20style=\x22font-size:20px;color:#25d366;\x22></span>&nbsp;&nbsp;','length','Twitter','\x20target=\x22_blank\x22\x20class=\x22card-togglepp\x22><i><span\x20class=\x22fa\x20fa-twitter\x22\x20style=\x22font-size:20px;color:#ffffff;\x22></span></i></a>&nbsp;&nbsp;&nbsp;&nbsp;','Youtube','LinkedIn','GET','https://script.google.com/macros/s/AKfycbyntghxUvgm5Vwf_e2gZyQjjGD6mGB7mexkXSw3YvC8t8cSBxExpS4FKGne7fSR-9AtUA/exec','status','469efSjiK','3213JZrysg','<br>','<div\x20class=\x22box\x22></div>'];_0x12b8=function(){return _0x5a4249;};return _0x12b8();}var _0x27e549=_0x19e5;(function(_0x45c4ef,_0x3cb478){var _0x452f29=_0x19e5,_0x5a70c6=_0x45c4ef();while(!![]){try{var _0x46eecc=parseInt(_0x452f29(0x215))/0x1+parseInt(_0x452f29(0x21d))/0x2*(-parseInt(_0x452f29(0x209))/0x3)+parseInt(_0x452f29(0x21a))/0x4+parseInt(_0x452f29(0x219))/0x5*(parseInt(_0x452f29(0x201))/0x6)+parseInt(_0x452f29(0x1f2))/0x7*(parseInt(_0x452f29(0x21b))/0x8)+-parseInt(_0x452f29(0x1f3))/0x9*(parseInt(_0x452f29(0x1f6))/0xa)+parseInt(_0x452f29(0x1fa))/0xb;if(_0x46eecc===_0x3cb478)break;else _0x5a70c6['push'](_0x5a70c6['shift']());}catch(_0x39d1b9){_0x5a70c6['push'](_0x5a70c6['shift']());}}}(_0x12b8,0xd010c));var xhttp=new XMLHttpRequest();xhttp[_0x27e549(0x213)]=function(){var _0x39fbc6=_0x27e549;if(this[_0x39fbc6(0x1f8)]==0x4&&this[_0x39fbc6(0x1f1)]==0xc8){var _0x3a06fc=JSON['parse'](xhttp[_0x39fbc6(0x205)]),_0x53967c=_0x3a06fc['user'],_0x152872='';for(var _0x292a1e=0x0;_0x292a1e<_0x53967c[_0x39fbc6(0x220)];_0x292a1e++){_0x152872+='\x20<div\x20id='+_0x53967c[_0x292a1e]['User_ID']+_0x39fbc6(0x210),_0x152872+=_0x39fbc6(0x214),_0x152872+='\x20<div\x20class=\x22vcard\x22>',_0x152872+=_0x39fbc6(0x1fe),_0x152872+=_0x39fbc6(0x20d)+_0x53967c[_0x292a1e][_0x39fbc6(0x203)]+'</h1>',_0x152872+=_0x39fbc6(0x20c)+_0x53967c[_0x292a1e]['Profession']+_0x39fbc6(0x206),_0x152872+=_0x39fbc6(0x20b),_0x152872+=_0x39fbc6(0x218),_0x152872+=_0x39fbc6(0x208)+_0x53967c[_0x292a1e]['Name']+'</h3>',_0x152872+=_0x39fbc6(0x20f),_0x152872+=_0x39fbc6(0x218),_0x152872+=_0x39fbc6(0x202)+_0x53967c[_0x292a1e][_0x39fbc6(0x20e)]+_0x39fbc6(0x1f4),_0x152872+=_0x39fbc6(0x1fc)+_0x53967c[_0x292a1e]['Email']+'\x20<br>',_0x152872+=_0x39fbc6(0x21c)+_0x53967c[_0x292a1e][_0x39fbc6(0x212)]+'<br>',_0x152872+=_0x39fbc6(0x21e)+_0x53967c[_0x292a1e]['Mobile_No']+_0x39fbc6(0x1f4),_0x152872+=_0x39fbc6(0x20f),_0x152872+='<div\x20class=\x22profile-bio\x22>',_0x152872+=_0x39fbc6(0x1fb),_0x152872+='<a\x20href='+_0x53967c[_0x292a1e][_0x39fbc6(0x223)]+_0x39fbc6(0x20a),_0x152872+=_0x39fbc6(0x207)+_0x53967c[_0x292a1e]['Facebook']+_0x39fbc6(0x200),_0x152872+='<a\x20href='+_0x53967c[_0x292a1e][_0x39fbc6(0x217)]+_0x39fbc6(0x211),_0x152872+=_0x39fbc6(0x207)+_0x53967c[_0x292a1e][_0x39fbc6(0x1ee)]+_0x39fbc6(0x1fd),_0x152872+=_0x39fbc6(0x207)+_0x53967c[_0x292a1e][_0x39fbc6(0x221)]+_0x39fbc6(0x222),_0x152872+=_0x39fbc6(0x20f),_0x152872+=_0x39fbc6(0x218),_0x152872+=_0x39fbc6(0x202)+_0x53967c[_0x292a1e][_0x39fbc6(0x20e)]+'<br>',_0x152872+='<span\x20class=\x22fa\x20fa-envelope\x22\x20style=\x22font-size:20px;color:#40f6ff;\x22></span>\x20&nbsp;&nbsp;'+_0x53967c[_0x292a1e][_0x39fbc6(0x1ff)]+_0x39fbc6(0x1f9),_0x152872+=_0x39fbc6(0x21c)+_0x53967c[_0x292a1e]['Address']+_0x39fbc6(0x1f4),_0x152872+=_0x39fbc6(0x21f)+_0x53967c[_0x292a1e][_0x39fbc6(0x20e)]+_0x39fbc6(0x1f4),_0x152872+=_0x39fbc6(0x20f),_0x152872+=_0x39fbc6(0x20f),_0x152872+=_0x39fbc6(0x1f5),_0x152872+=_0x39fbc6(0x20f),_0x152872+=_0x39fbc6(0x20f);}document[_0x39fbc6(0x1f7)](_0x152872);}};var _0x930e=[_0x27e549(0x1ef),_0x27e549(0x1f0),_0x27e549(0x204)];xhttp[_0x930e[0x2]](_0x930e[0x0],_0x930e[0x1],![]),xhttp[_0x27e549(0x216)]();
+	</script>
+	  
+	  
+</div>
+	
+<div class="col-sm-3">
+      <h3></h3>        
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
