@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+	<title>v-card</title>
+	<meta name="description" content="v-card">
+	<meta property="og:title" content="v-card">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://www.v-card.host/">
+	<meta property="og:image" content="https://www.v-card.host/v-card.png">
+	<meta property="og:description" content="v-card">
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="v-card">
+	<meta name="twitter:description" content="v-card">
+	<meta name="twitter:image" content="https://www.v-card.host/v-card.png">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
+	
+<link rel="icon" href="v-card.png" type="image/x-icon">
+<link rel="shortcut icon" href="v-card.png" type="image/x-icon">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+/*! V-card.host | MIT License | */:root{-moz-tab-size:4;-o-tab-size:4;tab-size:4}html{-webkit-text-size-adjust:100%;line-height:1.15}body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;margin:0}hr{color:inherit;height:0}abbr[title]{text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{border-color:inherit;text-indent:0}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],button{-webkit-appearance:button}legend{padding:0}progress{vertical-align:baseline}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}button{background-color:transparent;background-image:none}button:focus{outline:1px dotted;outline:5px auto -webkit-focus-ring-color}fieldset,ol,ul{margin:0;padding:0}ol,ul{list-style:none}html{font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}body{font-family:inherit;line-height:inherit}*,:after,:before{border:0 solid #e5e7eb;-webkit-box-sizing:border-box;box-sizing:border-box}hr{border-top-width:1px}img{border-style:solid}textarea{resize:vertical}input::-webkit-input-placeholder,textarea::-webkit-input-placeholder{color:#9ca3af}input::-moz-placeholder,textarea::-moz-placeholder{color:#9ca3af}input:-ms-input-placeholder,textarea:-ms-input-placeholder{color:#9ca3af}input::-ms-input-placeholder,textarea::-ms-input-placeholder{color:#9ca3af}input::placeholder,textarea::placeholder{color:#9ca3af}button{cursor:pointer}table{border-collapse:collapse}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}button,input,optgroup,select,textarea{color:inherit;line-height:inherit;padding:0}code,kbd,pre,samp{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{height:auto;max-width:100%}a{--tw-text-opacity:1;color:rgba(0,113,235,var(--tw-text-opacity))}a:hover{--tw-text-opacity:1;color:rgba(0,80,166,var(--tw-text-opacity));text-decoration:underline}a.permalink{--tw-text-opacity:1;color:rgba(229,231,235,var(--tw-text-opacity));padding-left:.125rem}a.permalink:hover{--tw-text-opacity:1;color:rgba(0,113,235,var(--tw-text-opacity));text-decoration:none}pre{font-size:.875rem;line-height:1.25rem}.bg-white{--tw-bg-opacity:1;background-color:rgba(255,255,255,var(--tw-bg-opacity))}.hover\:bg-gray-200:hover{--tw-bg-opacity:1;background-color:rgba(229,231,235,var(--tw-bg-opacity))}
+.rounded-full{border-radius:0px}.block{display:block}.flex{display:-webkit-box;display:-ms-flexbox;display:flex}.table{display:table}.hidden{display:none}.flex-col{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column}.items-center{-webkit-box-align:center;-ms-flex-align:center;align-items:center}.justify-center{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}.flex-grow{-webkit-box-flex:1;-ms-flex-positive:1;flex-grow:1}.font-bold{font-weight:700}.h-48{height:12rem}.h-full{height:100%}.text-lg{font-size:1.125rem}.text-lg,.text-xl{line-height:1.75rem}.text-xl{font-size:1.25rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-9xl{font-size:8rem;line-height:1}.my-8{margin-bottom:2rem;margin-top:2rem}.mx-auto{margin-left:auto;margin-right:auto}.mt-2{margin-top:.5rem}.mb-2{margin-bottom:.5rem}.ml-2{margin-left:.5rem}.mb-3{margin-bottom:.75rem}.mb-4{margin-bottom:1rem}.max-w-screen-sm{max-width:640px}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.py-1{padding-bottom:.25rem;padding-top:.25rem}.px-2{padding-left:.5rem;padding-right:.5rem}.px-4{padding-left:1rem;padding-right:1rem}.py-5{padding-bottom:1.25rem;padding-top:1.25rem}.py-10{padding-bottom:2.5rem;padding-top:2.5rem}.py-1\.5{padding-bottom:.375rem;padding-top:.375rem}.pl-0{padding-left:0}.pb-1{padding-bottom:.25rem}.pl-0\.5{padding-left:.125rem}.static{position:static}.absolute{position:absolute}*{--tw-shadow:0 0 #0000}.shadow-md{--tw-shadow:0 4px 6px -1px rgba(0,0,0,.1),0 2px 4px -1px rgba(0,0,0,.06);-webkit-box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);box-shadow:var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)}*{--tw-ring-inset:var(--tw-empty,/*!*/ /*!*/);--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgba(59,130,246,.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000}.text-center{text-align:center}.text-black{--tw-text-opacity:1;color:rgba(0,0,0,var(--tw-text-opacity))}.text-gray-400{--tw-text-opacity:1;color:rgba(156,163,175,var(--tw-text-opacity))}.text-gray-600{--tw-text-opacity:1;color:rgba(75,85,99,var(--tw-text-opacity))}.text-yellow-500{--tw-text-opacity:1;color:rgba(245,158,11,var(--tw-text-opacity))}.text-green-500{--tw-text-opacity:1;color:rgba(16,185,129,var(--tw-text-opacity))}.text-twitter{--tw-text-opacity:1;color:rgba(47,155,240,var(--tw-text-opacity))}.text-linkedin{--tw-text-opacity:1;color:rgba(10,102,194,var(--tw-text-opacity))}.text-website{--tw-text-opacity:1;color:rgba(230,32,32,var(--tw-text-opacity))}.hover\:no-underline:hover{text-decoration:none}.w-48{width:12rem}.w-full{width:100%}.transform{--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;-webkit-transform:translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));transform:translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@-webkit-keyframes spin{to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}@keyframes spin{to{-webkit-transform:rotate(1turn);transform:rotate(1turn)}}@-webkit-keyframes ping{75%,to{opacity:0;-webkit-transform:scale(2);transform:scale(2)}}@keyframes ping{75%,to{opacity:0;-webkit-transform:scale(2);transform:scale(2)}}@-webkit-keyframes pulse{50%{opacity:.5}}@keyframes pulse{50%{opacity:.5}}@-webkit-keyframes bounce{0%,to{-webkit-animation-timing-function:cubic-bezier(.8,0,1,1);animation-timing-function:cubic-bezier(.8,0,1,1);-webkit-transform:translateY(-25%);transform:translateY(-25%)}50%{-webkit-animation-timing-function:cubic-bezier(0,0,.2,1);animation-timing-function:cubic-bezier(0,0,.2,1);-webkit-transform:none;transform:none}}@keyframes bounce{0%,to{-webkit-animation-timing-function:cubic-bezier(.8,0,1,1);animation-timing-function:cubic-bezier(.8,0,1,1);-webkit-transform:translateY(-25%);transform:translateY(-25%)}50%{-webkit-animation-timing-function:cubic-bezier(0,0,.2,1);animation-timing-function:cubic-bezier(0,0,.2,1);-webkit-transform:none;transform:none}}code[class*=language-],pre[class*=language-]{word-wrap:normal;background:#111827;color:#eee;font-family:Roboto Mono,monospace;-webkit-hyphens:none;-ms-hyphens:none;hyphens:none;line-height:1.4em;-moz-tab-size:4;-o-tab-size:4;tab-size:4;text-align:left;white-space:pre;word-break:normal;word-spacing:normal}code[class*=language-]::-moz-selection,code[class*=language-] ::-moz-selection,pre[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection{background:hsla(0,0%,50%,.3)}code[class*=language-]::selection,code[class*=language-] ::selection,pre[class*=language-]::selection,pre[class*=language-] ::selection{background:hsla(0,0%,50%,.3)}:not(pre)>code[class*=language-]{border-radius:.2em;padding:.1em;white-space:normal}pre[class*=language-]{overflow:auto;padding:1.25em 1em;position:relative}.language-css>code,.language-sass>code,.language-scss>code{color:#fd9170}[class*=language-] .namespace{opacity:.7}.token.atrule{color:#c792ea}.token.attr-name{color:#ffcb6b}.token.attr-value,.token.attribute{color:#a5e844}.token.boolean{color:#c792ea}.token.builtin{color:#ffcb6b}.token.cdata,.token.char{color:#80cbc4}.token.class{color:#ffcb6b}.token.class-name{color:#f2ff00}.token.comment{color:#969696}.token.constant{color:#c792ea}.token.deleted{color:#f66}.token.doctype{color:#616161}.token.entity{color:#f66}.token.function{color:#c792ea}.token.hexcode{color:#f2ff00}.token.id,.token.important{color:#c792ea;font-weight:700}.token.inserted{color:#80cbc4}.token.keyword{color:#c792ea}.token.number{color:#fd9170}.token.operator{color:#89ddff}.token.prolog{color:#616161}.token.property{color:#80cbc4}.token.pseudo-class,.token.pseudo-element{color:#a5e844}.token.punctuation{color:#89ddff}.token.regex{color:#f2ff00}.token.selector{color:#f66}.token.string{color:#a5e844}.token.symbol{color:#c792ea}.token.tag{color:#f66}.token.unit{color:#fd9170}.token.url,.token.variable{color:#f66}::-moz-selection{background-color:hsla(0,0%,75%,.5)}::selection{background-color:hsla(0,0%,75%,.5)}html{scroll-behavior:smooth}@media (min-width:640px){.sm\:text-4xl{font-size:2.25rem;line-height:2.5rem}}@media (min-width:768px){.md\:text-6xl{font-size:3.75rem;line-height:1}.md\:pb-4{padding-bottom:1rem}}
+</style>
+	
+<style>
+.userpost {
+
+opacity:0;
+-webkit-transition: opacity 800ms ease-in;
+-moz-transition: opacity 800ms ease-in;
+transition: opacity 400ms ease-in;
+
+position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+}
+
+
+.userpost:target {
+opacity:1;}
+/*.userpost > div {
+width: 1000px;
+height:500px;
+position: relative;
+margin: 10% auto;
+padding: 5px 20px 13px 20px;
+
+} */
+
+.userpost > div {
+    /* width: fit-content; */
+    height: 500px;
+    position: relative;
+    margin: 1% auto;
+    padding: 5px 20px 13px 20px;
+}
+</style>
+
+<style>
+
+img, video {
+    height: auto;
+    max-width: 100%;
+    border-radius: 118px;
+}
+
+body {
+
+    margin: 0;
+    padding: 0;
+    padding: 0;
+    background-image: linear-gradient(88deg, #474747 0%, #c5c5c5 100%);
+}
+   .bg-white {
+    background-color: #f7f7f7;
+    border: 2px solid #ffffff;}
+
+
+ ::-webkit-scrollbar-track
+{
+background-color: #636464;;
+}
+::-webkit-scrollbar
+{
+width: 12px;
+height: 5px;
+background-color: #f5f8fc;
+}
+::-webkit-scrollbar-thumb
+{
+background-color: #435be4;
+background-image: -webkit-linear-gradient(45deg,
+rgba(255, 255, 255, .2) 25%,
+transparent 25%,
+transparent 50%,
+rgba(255, 255, 255, .2) 50%,
+rgba(255, 255, 255, .2) 75%,
+transparent 75%,
+transparent)
+}
+
+
+.namestyle {
+    color: transparent;
+   background: radial-gradient(circle at 30% 107%, #635748 0%, #555021 5%, #e39732 45%, #62632d 60%, #7c6d59 90%);
+    background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background-clip: text;
+    /* -webkit-background-clip: text; */
+    font-size: 17px;
+    font-weight: bolder;
+}
+
+
+
+
+.fa.fa-instagram {
+  color: transparent;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+.text-black {
+    --tw-text-opacity: 1;
+    /* color: rgba(0,0,0,var(--tw-text-opacity)); */
+    color: #a18d51;
+    font-size: 16px;
+    /* text-align: end; */
+}
+
+
+
+ul.design {
+  background-color: #7d6e5a;
+    padding: 62px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), inset -1px -1px 20px 15px rgba(0, 0, 0, 0.19);
+ border-radius: 0px 0px 50px 50px;
+}
+
+
+
+.text-center.mb-4 {
+    background-color: #faebd7;
+    box-shadow: antiquewhite;
+    box-shadow: 0px -2px 13px 7px rgb(129 121 121 / 48%), -1px -1px 0px 16px rgb(243 243 243 / 39%);
+    border-radius: 50px 50px 0px 0px;
+}
+.mx-auto.__index__.max-w-screen-sm.px-4.py-10 {
+
+	border-radius: 0px 0px 150px 105px;
+}
+</style>
+</head>
+
+<body class="flex flex-col min-h-screen">
+	<main class="flex-grow">
+		
+		
+	<script>
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+	if(this.readyState == 4 && this.status == 200) {
+		var response = JSON.parse(xhttp.responseText);
+		var user = response.user;
+		var showdata = "";
+		for(var i = 0; i < user.length; i++) {
+			showdata += ' <div id=' + user[i].User_ID+ ' class="userpost">';
+
+			
+		
+		showdata += '<div class="mx-auto __index__ max-w-screen-sm px-4 py-10">';
+		showdata += '	<div class="text-center mb-4">';
+				showdata += '<a href="https://www.w3schools.com/howto/img_avatar.png" title="Profile picture - click to download" class="mx-auto block h-48 mb-2 overflow-hidden rounded-full w-48"><img class="h-full w-full" src="https://www.w3schools.com/howto/img_avatar.png" alt="Bryon Tjanaka profile picture" loading="lazy"></a>';
+			
+
+			showdata += '<div class="mx-auto flex justify-center"><h1 class="text-3xl font-bold sm:text-4xl">  '+ user[i].Name+' </h1>';
+            showdata += '</div>'; 
+				showdata += '<p class="text-xl mt-2">'+ user[i].Profession+'</p>';
+			showdata += '</div>'; 
+			showdata += '<ul class="design">';
+				
+	showdata += '<li class="mb-3">';
+		showdata += ' <a href=' + user[i].Email+ ' target=\"_blank\ title="Email" class="flex bg-white group hover:bg-gray-200 hover:no-underline items-center px-2 py-1.5 rounded-full shadow-md text-xl w-full"> ';
+showdata += ' <svg height="29" width="22" xmlns="http://www.w3.org/2000/svg" viewBox="52 26 88 66"><path fill="#4285f4" d="M58 108h14V74L52 59v43c0 3.32 2.69 6 6 6"/><path fill="#34a853" d="M120 108h14c3.32 0 6-2.69 6-6V59l-20 15"/><path fill="#fbbc04" d="M120 48v26l20-15v-8c0-7.42-8.47-11.65-14.4-7.2"/><path fill="#ea4335" d="M72 74V48l24 18 24-18v26L96 92"/><path fill="#c5221f" d="M52 51v8l20 15V48l-5.6-4.2c-5.94-4.45-14.4-.22-14.4 7.2"/>';
+ showdata += '</svg>'; 
+				  showdata += ' &nbsp;&nbsp;<span class="namestyle">Email </span> <span class="mx-auto text-center"><span class="text-black"><span class="text-lg">'+ user[i].Email+'</span></span></span>';
+		showdata += '</a>';
+   showdata += '</li>'
+	 showdata += '<li class="mb-3"><a href=' + user[i].Facebook+ ' target=\"_blank\ title="facebook" class="flex bg-white group hover:bg-gray-200 hover:no-underline items-center px-2 py-1.5 rounded-full shadow-md text-xl w-full"><i class="fa fa-facebook-f"></i> &nbsp;&nbsp;<span class="namestyle">Facebook</span><span class="mx-auto text-center"> <span class="text-black pl-0.5"><span class="text-lg">' + user[i].Facebook+ '</span></span></span></a>'; showdata += '</li>';
+	showdata += '<li class="mb-3"><a href=' + user[i].Instagram+ ' target=\"_blank\ title="Instagram" class="flex bg-white group hover:bg-gray-200 hover:no-underline items-center px-2 py-1.5 rounded-full shadow-md text-xl w-full"><i class="fa fa-instagram"></i>&nbsp;&nbsp;<span class="namestyle">Instagram </span><span class="mx-auto text-center"> <span class="text-black pl-0.5"><span class="text-lg">'+ user[i].Instagram+'</span></span></span></a>';showdata += '</li>';
+	showdata += '<li class="mb-3"><a href=' + user[i].Twitter+ ' target=\"_blank\ title="Twitter" class="flex bg-white group hover:bg-gray-200 hover:no-underline items-center px-2 py-1.5 rounded-full shadow-md text-xl w-full"><i class="fab fa-twitter text-twitter"></i>&nbsp;&nbsp;<span class="namestyle">Twitter </span><span class="mx-auto text-center"> <span class="text-black pl-0.5"><span class="text-lg">'+ user[i].Twitter+'</span></span></span></a>';showdata += '</li>';
+	showdata += '<li class="mb-3"><a href=' + user[i].LinkedIn+ ' target=\"_blank\ title="LinkedIn" class="flex bg-white group hover:bg-gray-200 hover:no-underline items-center px-2 py-1.5 rounded-full shadow-md text-xl w-full"><i class="fab fa-linkedin text-linkedin"></i>&nbsp;&nbsp;<span class="namestyle">LinkedIn </span><span class="mx-auto text-center"> <span class="text-black pl-0.5"><span class="text-lg">'+ user[i].LinkedIn+'</span></span></span></a>';showdata += '</li>';
+
+	
+	showdata += '<li class="mb-3"><a href=' + user[i].Youtube+ ' target=\"_blank\ title="Youtube" class="flex bg-white group hover:bg-gray-200 hover:no-underline items-center px-2 py-1.5 rounded-full shadow-md text-xl w-full"><i class="fa fa-youtube-play" style="font-size:25px;color:red"></i>&nbsp;&nbsp;<span class="namestyle">Youtube </span><span class="mx-auto text-center"> <span class="text-black pl-0.5"><span class="text-lg">'+ user[i].Youtube+'</span></span></span></a>';showdata += '</li>';
+  showdata += '<li class="mb-3"><a href="/" title="Website" class="flex bg-white group hover:bg-gray-200 hover:no-underline items-center px-2 py-1.5 rounded-full shadow-md text-xl w-full"><i class="fa fa-building-o text-website"></i>&nbsp;&nbsp; <span class="namestyle">State</span><span class="mx-auto text-center"><span class="text-black pl-0.5"><span class="text-lg"> '+ user[i].States+'</span></span></span></a>';showdata += '</li>';
+	 showdata += '<li class="mb-3"><a href="/" title="Website" class="flex bg-white group hover:bg-gray-200 hover:no-underline items-center px-2 py-1.5 rounded-full shadow-md text-xl w-full"><i class="fa fa-building-o text-website"></i>&nbsp;&nbsp; <span class="namestyle">City</span><span class="mx-auto text-center"><span class="text-black pl-0.5"><span class="text-lg"> '+ user[i].City+'</span></span></span></a>';showdata += '</li>';
+	showdata += '<li class="mb-3"><a href="/" title="Resume" class="flex bg-white group hover:bg-gray-200 hover:no-underline items-center px-2 py-1.5 rounded-full shadow-md text-xl w-full"><i class="fa fa-map-marker text-yellow-500"></i>&nbsp;&nbsp;<span class="namestyle">Address</span><span class="mx-auto text-center"> <span class="text-black pl-0.5"> '+ user[i].Address+' </span></span></a>';showdata += '</li>';
+	showdata += '<li class="mb-3"><a href="/" title="CV" class="flex bg-white group hover:bg-gray-200 hover:no-underline items-center px-2 py-1.5 rounded-full shadow-md text-xl w-full"><i class="fa fa-phone text-green-500"></i>&nbsp;&nbsp;<span class="namestyle">Mobile No.</span> <span class="mx-auto text-center"> <span class="text-black pl-0.5">'+ user[i].Mobile_No+'</span></span></a>';showdata += '</li>';
+	//showdata += '<li class="mb-3"><a href="/qr" title="QR Code" class="flex bg-white group hover:bg-gray-200 hover:no-underline items-center px-2 py-1.5 rounded-full shadow-md text-xl w-full"><i class="text-black fa-link fas"></i> <span class="mx-auto text-center"><span class="text-black pl-0.5"><span>QR Code</span></span>'+ user[i].Mobile_No+'</span></a>';showdata += '</li>';
+	showdata += '<li class="mb-3"><a href="/" title="How to Make This Website" class="flex bg-white group hover:bg-gray-200 hover:no-underline items-center px-2 py-1.5 rounded-full shadow-md text-xl w-full"><i class="text-black fa-clipboard far"></i><span class="mx-auto text-center"> <span class="text-black pl-0.5"><span class="namestyle">V-card.host</span></span></span></a>';showdata += '</li>';
+
+			
+			showdata += '</ul>'; 	
+			
+		showdata += '</div>'; 
+		
+	showdata += '</div>'; 	
+		
+		}
+		document.write(showdata);
+	}
+};
+function _0x1f85(){var _0x1b8ca6=['250198oFjjwA','5yeQZqj','send','open','1182wxDISL','993666exZHuw','8682960XIfMtA','2806384NbtiSk','56kGsOsf','2568447LUYkZm','111363PpygxG','https://script.google.com/macros/s/AKfycbyntghxUvgm5Vwf_e2gZyQjjGD6mGB7mexkXSw3YvC8t8cSBxExpS4FKGne7fSR-9AtUA/exec','1074IOQjfm'];_0x1f85=function(){return _0x1b8ca6;};return _0x1f85();}function _0x4207(_0x45c78a,_0x5016b2){var _0x1f85d8=_0x1f85();return _0x4207=function(_0x420740,_0x1013ec){_0x420740=_0x420740-0xfb;var _0x304dcd=_0x1f85d8[_0x420740];return _0x304dcd;},_0x4207(_0x45c78a,_0x5016b2);}var _0x16df3f=_0x4207;(function(_0x123fd9,_0x77fdc5){var _0x536575=_0x4207,_0x2a372f=_0x123fd9();while(!![]){try{var _0x14dbc3=parseInt(_0x536575(0x101))/0x1+-parseInt(_0x536575(0x100))/0x2*(parseInt(_0x536575(0x105))/0x3)+-parseInt(_0x536575(0xfb))/0x4+-parseInt(_0x536575(0x102))/0x5*(parseInt(_0x536575(0x106))/0x6)+parseInt(_0x536575(0xfe))/0x7*(parseInt(_0x536575(0xfc))/0x8)+parseInt(_0x536575(0xfd))/0x9+parseInt(_0x536575(0x107))/0xa;if(_0x14dbc3===_0x77fdc5)break;else _0x2a372f['push'](_0x2a372f['shift']());}catch(_0x100fdc){_0x2a372f['push'](_0x2a372f['shift']());}}}(_0x1f85,0x6a8e7),xhttp[_0x16df3f(0x104)]('GET',_0x16df3f(0xff),![]),xhttp[_0x16df3f(0x103)]());
+	</script>		
+		
+	</main>
+	
+</body>
+
+</html>
