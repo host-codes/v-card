@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>v-Card.live | Visiting Card</title>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <meta content='width=device-width, initial-scale=0.7, maximum-scale=0.7' name='viewport'/>	
+<link rel="stylesheet" href="./style.css">
+<style>
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  background: #eaeaea;
+   /*overflow: hidden;*/
+}
+
+.design-attribution, .attribution {
+  position: fixed;
+  z-index: 10;
+  background: #1a7b81;
+  display: inline-block;
+}
+.design-attribution a, .attribution a {
+  padding: 10px 20px;
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+}
+
+.attribution {
+  bottom: 0;
+  right: 0;
+}
+
+.main {
+  position: relative;
+  width: 100%;
+ /* height: 100vh; */
+ height: 52vh;
+}
+
+
+
+section {
+  height: 72vh;
+  position: relative;
+  width: 100%;
+}
+.second {
+    height: 9vh;
+    position: absolute;
+    width: 100%;
+}
+.card {
+  height: 300px;
+  width: 500px;
+  background: #fefefe;
+  position: absolute;
+  top: 34%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;    border-radius: 7px;
+  box-shadow: 3px 3px 9px 0px rgba(0, 0, 0, 0.5);
+}
+
+
+
+#front > * {
+  position: absolute;
+}
+#front .background {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#front .background * {
+  position: absolute;
+  background: #34c5ca;
+}
+#front .background .top {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 12px;
+}
+#front .background .right {
+  top: 0;
+  right: 0;
+  height: 150px;
+  width: 250px;
+  transform-origin: bottom right;
+  transform: rotate(45deg);
+  box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.5);
+}
+#front .background .right:after {
+  content: " ";
+  position: absolute;
+  display: block;
+  bottom: 0;
+  right: 0;
+  height: 50px;
+  width: 50px;
+  background: #1a7b81;
+}
+#front .background #left {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: #34c5ca;
+  height: 220px;
+  width: 120px;
+  transform-origin: bottom right;
+  transform: rotate(-45deg);
+  box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.5);
+}
+#front .background #left:after {
+  content: " ";
+  position: absolute;
+  display: block;
+  bottom: 0;
+  right: 0;
+  height: 40px;
+  width: 40px;
+  background: #1a7b81;
+}
+#front .content {
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#front .content .brand {
+  width: 220px;
+  border: 2px solid #34c5ca;
+  padding: 10px 20px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#front .content .brand > * {
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+#front .content .brand .logo {
+  background: #1a7b81;
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+  position: relative;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  overflow: hidden;
+}
+#front .content .brand .logo:after {
+  content: " ";
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: 0px;
+  height: 20px;
+  width: 45px;
+  background: #34c5ca;
+  transform-origin: top left;
+  transform: rotate(27deg);
+}
+#front .content .brand .company-name {
+    text-transform: capitalize;
+    font-weight: bold;
+    color: #504395;
+    font-size: 20px;
+    text-align: center;
+}
+
+
+#front .content p.presentation {
+    color: #474747;
+    font-size: 13px;
+    line-height: 15px;
+    padding-top: 5px;
+    text-align: justify;
+    font-weight: bolder;
+}
+
+#back {
+  background: #cee1e1;
+}
+#back .background {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: #34c5ca;
+  height: 340px;
+  width: 230px;
+  transform-origin: bottom right;
+  /*transform: rotate(-45deg);*/
+  transform: rotate(299deg);
+  box-shadow: 3px 3px 10px 1px rgba(0, 0, 0, 0.5);
+}
+#back .background:after {
+  content: " ";
+  position: absolute;
+  display: block;
+  bottom: 0;
+  right: 0;
+  height: 80px;
+  width: 80px;
+  background: #1a7b81;
+}
+#back .content {
+  position: relative;
+  height: 270px;
+  width: 500px;
+  background: #fefefe;
+  transform-origin: top left;
+  transform: skewX(45deg) translateX(10px);
+}
+#back .content > * {
+  transform: skewX(-45deg);
+}
+#back .content .content-wrapper {
+  position: absolute;
+  width: 70%;
+  color: #525252;
+  top: 20px;
+  right: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+#back .content .content-wrapper > *:nth-child(-n+2) {
+  text-transform: uppercase;
+}
+#back .content .content-wrapper h2.name {
+  font-size: 1.5em;
+  letter-spacing: -1px;
+  color: #4d4d4d;
+  border-bottom: 3px solid #b3b3b3;
+  padding-bottom: 8px;
+}
+#back .content .content-wrapper h2.name span {
+  color: #ef9f23;
+    font-weight: bolder;
+	text-transform: capitalize;
+}
+#back .content .content-wrapper h4.title {
+  font-size: 1.2em;
+  color: #1a7b81;
+  padding-top: 8px;
+}
+#back .content .content-wrapper .contact {
+  color: #000000;
+}
+#back .content .content-wrapper .contact table {
+  margin-top: 10px;
+}
+#back .content .content-wrapper .contact table tr {
+  width: 122px;
+}
+#back .content .content-wrapper .contact table tr td {
+  padding: 4px 0;
+}
+#back .content .content-wrapper .contact table tr td:first-child {
+  padding-right: 10px;
+}
+#back .content .content-wrapper .contact table tr td i {
+  color: #463675;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: #eaeaea;
+  } 
+  .main {height: 55vh;}
+ .card {top: 25%;width: 443px;     border-radius: 7px;}
+ #back .content .content-wrapper {
+  color: #c92929;
+   right: 236px;
+   align-items: flex-end;}
+   
+   
+   section {
+        height: 59vh;
+        position: relative;
+        width: 100%;
+        top: 14%;}
+}
+</style>
+<style>
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+
+.container {
+  height: 70px;
+  padding: 55px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+}
+
+.menu {
+  z-index: 999;
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+/*.menu .share i.fa {
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  line-height: 50px;
+  background-color: #ffffffd1;
+      border: 2px solid #c4e3ce;
+  border-radius: 50px;
+}*/
+  
+  
+  .menu .share i.fa {
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    line-height: 39px;
+    background-color: #ffffffd1;
+    border-radius: 50px;
+    border: 10px solid #ffffff;
+}
+.menu .share:hover.bottom .submenu li:nth-child(1) {
+  opacity: 1;
+  top: 50px;
+  transform: rotate(0deg);
+  border-top: 1px dashed #cccccc;
+  transition-delay: 0.08s;
+}
+.menu .share:hover.bottom .submenu li:nth-child(2) {
+  opacity: 1;
+  top: 100px;
+  transform: rotate(0deg);
+  border-top: 1px dashed #cccccc;
+  transition-delay: 0.16s;
+}
+.menu .share:hover.bottom .submenu li:nth-child(3) {
+  opacity: 1;
+  top: 150px;
+  transform: rotate(0deg);
+  border-top: 1px dashed #cccccc;
+  transition-delay: 0.24s;
+}
+.menu .share:hover.bottom .submenu li:nth-child(4) {
+  opacity: 1;
+  top: 200px;
+  transform: rotate(0deg);
+  border-top: 1px dashed #cccccc;
+  transition-delay: 0.32s;
+}
+.menu .share:hover.bottom .submenu li:nth-child(5) {
+  opacity: 1;
+  top: 250px;
+  transform: rotate(0deg);
+  border-top: 1px dashed #cccccc;
+  transition-delay: 0.4s;
+}
+.menu .share:hover.left .submenu li:nth-child(1) {
+  opacity: 1;
+  left: -51px;
+  transform: rotate(0deg);
+  transition-delay: 0.5s;
+  border-right: 1px dashed #cccccc;
+}
+.menu .share:hover.left .submenu li:nth-child(2) {
+  opacity: 1;
+  left: -102px;
+  transform: rotate(0deg);
+  transition-delay: 1s;
+  border-right: 1px dashed #cccccc;
+}
+.menu .share:hover.left .submenu li:nth-child(3) {
+  opacity: 1;
+  left: -153px;
+  transform: rotate(0deg);
+  transition-delay: 1.5s;
+  border-right: 1px dashed #cccccc;
+}
+.menu .share:hover.left .submenu li:nth-child(4) {
+  opacity: 1;
+  left: -204px;
+  transform: rotate(0deg);
+  transition-delay: 2s;
+  border-right: 1px dashed #cccccc;
+}
+.menu .share:hover.left .submenu li:nth-child(5) {
+  opacity: 1;
+  left: -255px;
+  transform: rotate(0deg);
+  transition-delay: 2.5s;
+  border-right: 1px dashed #cccccc;
+}
+.menu .share:hover.right .submenu li:nth-child(1) {
+  opacity: 1;
+  left: 50px;
+  transform: rotate(0deg);
+  transition-delay: 0.08s;
+  border-left: 1px dashed #cccccc;
+}
+.menu .share:hover.right .submenu li:nth-child(2) {
+  opacity: 1;
+  left: 100px;
+  transform: rotate(0deg);
+  transition-delay: 0.16s;
+  border-left: 1px dashed #cccccc;
+}
+.menu .share:hover.right .submenu li:nth-child(3) {
+  opacity: 1;
+  left: 150px;
+  transform: rotate(0deg);
+  transition-delay: 0.24s;
+  border-left: 1px dashed #cccccc;
+}
+.menu .share:hover.right .submenu li:nth-child(4) {
+  opacity: 1;
+  left: 200px;
+  transform: rotate(0deg);
+  transition-delay: 0.32s;
+  border-left: 1px dashed #cccccc;
+}
+.menu .share:hover.right .submenu li:nth-child(5) {
+  opacity: 1;
+  left: 250px;
+  transform: rotate(0deg);
+  transition-delay: 0.4s;
+  border-left: 1px dashed #cccccc;
+}
+.menu .share:hover.top .submenu li:nth-child(1) {
+  opacity: 1;
+  top: -51px;
+  transition-delay: 0.08s;
+  transform: rotateY(0deg);
+  border-bottom: 1px dashed #d9d9d9;
+}
+.menu .share:hover.top .submenu li:nth-child(2) {
+  opacity: 1;
+  top: -102px;
+  transition-delay: 0.16s;
+  transform: rotateY(0deg);
+  border-bottom: 1px dashed #d9d9d9;
+}
+.menu .share:hover.top .submenu li:nth-child(3) {
+  opacity: 1;
+  top: -153px;
+  transition-delay: 0.24s;
+  transform: rotateY(0deg);
+  border-bottom: 1px dashed #d9d9d9;
+}
+.menu .share:hover.top .submenu li:nth-child(4) {
+  opacity: 1;
+  top: -204px;
+  transition-delay: 0.32s;
+  transform: rotateY(0deg);
+  border-bottom: 1px dashed #d9d9d9;
+}
+.menu .share:hover.top .submenu li:nth-child(5) {
+  opacity: 1;
+  top: -255px;
+  transition-delay: 0.4s;
+  transform: rotateY(0deg);
+  border-bottom: 1px dashed #d9d9d9;
+}
+.menu .submenu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.menu .submenu li {
+  transition: all ease-in-out 0.5s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0;
+}
+.menu .submenu li a {
+  color: #212121;
+}
+.menu .submenu li a:hover i.fa {
+  color: #fff;
+}
+.menu .submenu li a:hover.facebook i.fa {
+  background-color: #3b5999;
+}
+.menu .submenu li a:hover.twitter i.fa {
+  background-color: #55acee;
+}
+.menu .submenu li a:hover.googlePlus i.fa {
+  background-color: #dd4b39;
+}
+.menu .submenu li a:hover.instagram i.fa {
+  background-color: #e4405f;
+}
+
+
+.menu .submenu li a:hover.whatsapp i.fa {
+  background-color: #25d366;
+}
+
+.menu .submenu li a:hover.telegram i.fa {
+  background-color: #1d91cc;
+}
+
+i.fa.fa-facebook {
+    color: #3b5999;
+}
+
+i.fa.fa-whatsapp {
+    color: #25d366;
+}
+
+i.fa.fa-telegram {
+    color: #1d91cc;
+}
+
+i.fa.fa-twitter {
+    color: #55acee;
+}
+
+i.fa.fa-twitter:hover {
+    background-color: #55acee;
+    color: #ffffff;
+    border: 10px solid #55acee;
+}
+
+i.fa.fa-facebook:hover {
+    
+	background-color: #3b5999;
+    color: #ffffff;
+    border: 10px solid #3b5999;
+}
+
+i.fa.fa-whatsapp:hover {
+    
+	background-color: #25d366;
+    color: #ffffff;
+    border: 10px solid #25d366;
+}
+
+i.fa.fa-telegram:hover {
+    
+	background-color: #1d91cc;
+    color: #ffffff;
+    border: 10px solid #1d91cc;
+}
+
+.menu .submenu li a:whatsapp i.fa {
+  background-color: #25d366;
+}
+
+.menu .submenu li a:telegram i.fa {
+  background-color: #1d91cc;
+}
+
+
+
+
+.menu .submenu li:nth-child(1) {
+  transform: rotateX(45deg);
+}
+.menu .submenu li:nth-child(2) {
+  transform: rotateX(90deg);
+}
+.menu .submenu li:nth-child(3) {
+  transform: rotateX(135deg);
+}
+.menu .submenu li:nth-child(4) {
+  transform: rotateX(180deg);
+}
+.menu.topLeft {
+  top: 10px;
+  left: 10px;
+}
+.menu.topRight {
+  top: 10px;
+  right: 10px;
+}
+.menu.bottomLeft {
+  bottom: 10px;
+  left: 10px;
+}
+.menu.bottomRight {
+  bottom: 10px;
+  right: 10px;
+}
+
+</style>
+
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!--<div class="design-attribution"><a class="attrib" href="" target="_blank">v-Card.live</a></div>
+<div class="attribution"><a href="" target="_blank">Scroll Effect by Pete R.</a></div>-->
+<!--<div class="main">
+  <section>
+    <div class="card" id="front">
+      <div class="background">
+        <div class="top"></div>
+        <div class="right"></div>
+        <div id="left"></div>
+      </div>
+      <div class="content">
+        <div class="brand">
+          <div class="logo"></div>
+          <h1 class="company-name">Company Name</h1>
+        </div>
+        <p class="presentation">dolor sit as modi incid</p>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="card" id="back">
+      <div class="background"></div>
+      <div class="content">
+        <div class="content-wrapper">
+          <h2 class="name"><span> Himanhu Kumar Bharti</span></h2>
+          <h4 class="title">Graphic Designer</h4>
+          <div class="contact">
+            <table>
+              <tr>
+                <td><i class="fa fa-envelope"></i></td>
+                <td>Emailzcvzvvzv@email.com</td>
+              </tr>
+              <tr>
+                <td><i class="fa fa-phone"></i></td>
+                <td>123-456-789</td>
+              </tr>
+              <tr>
+                <td><i class="fa fa-home"></i></td>
+                <td>Loremipsum</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="userDataContainer"></div> <!-- Container for user data -->
+	
+    <script>
+        // Function to parse User_ID from URL
+        function getUserIdFromUrl() {
+            var url = window.location.href;
+            var hashIndex = url.indexOf('#');
+            if (hashIndex !== -1 && hashIndex < url.length - 1) {
+                return url.substring(hashIndex + 1);
+            }
+            return '';
+        }
+
+        // Get User_ID from URL
+        var requestedUserId = getUserIdFromUrl();
+
+        // Create a new XMLHttpRequest object
+        var xhttp = new XMLHttpRequest();
+
+        // Define the function to handle the response
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                // Parse the JSON response
+                var response = JSON.parse(xhttp.responseText);
+                
+                // Find user data with matching User_ID
+                var userData = response.user.find(function(item) {
+                    return item.User_ID === requestedUserId;
+                });
+
+                // Display the data for the requested User_ID
+                if (userData) {
+                    var userDataContainer = document.getElementById("userDataContainer");
+
+                   /* var showdata = '<div class="userpost">';
+                    showdata += '<h2>' + userData.NAME + '</h2>';
+                    showdata += '<p><strong>Brand Name:</strong> ' + userData.Brand_name + '</p>';
+                    showdata += '<p><strong>Quantity:</strong> ' + userData.Quantity + '</p>';
+                    showdata += '<p><strong>Size:</strong> ' + userData.Size + '</p>';
+                    showdata += '<p><strong>Date:</strong> ' + userData.DATE + '</p>';
+                    showdata += '<p><strong>Colour:</strong> ' + userData.Colour + '</p>';
+                    showdata += '<img src="' + userData.FILE1H + '" alt="Image" width="400">';
+                    showdata += '</div>';
+					*/
+					
+					
+					
+					
+					
+					
+					
+					
+   showdata = '<div class="main">';
+  showdata += '<section>';
+     showdata += '<div class="card" id="front">';
+      showdata += ' <div class="background">';
+        showdata += ' <div class="top"></div>';
+         showdata += '<div class="right"></div>';
+         showdata += '<div id="left"></div>';
+      showdata += '</div>';
+       showdata += '<div class="content">';
+         showdata += '<div class="brand">';
+           showdata += '<div class="logo"></div>';
+           showdata += '<h1 class="company-name">' + userData.Profile_Image + '</h1>';
+      showdata += '</div>';
+        showdata += ' <p class="presentation">' + userData.About + '</p>';
+      showdata += '</div>';
+     showdata += '</div>';
+  showdata += '</section>';
+  showdata += '<div class="second">';
+    showdata += ' <div class="card" id="back">';
+       showdata += '<div class="background"></div>';
+       showdata += '<div class="content">';
+        showdata += ' <div class="content-wrapper">';
+           showdata += '<h2 class="name"><span>' + userData.Name + '</span></h2>';
+          showdata += ' <h4 class="title">' + userData.Profession + '</h4>';
+          showdata += ' <div class="contact">';
+             showdata += '<table>';
+			 
+			  showdata += '<tr>';
+                showdata += ' <td><i class="fa fa-phone"></i></td>';
+                 showdata += '<td>' + userData.Mobile_No+ '</td>';
+               showdata += '</tr>';
+			   
+          
+			    showdata += ' <tr>';
+                    showdata += '<td><i class="fa fa-instagram"></i></td>';
+                       showdata += '<td>';
+				       showdata += " <a  href='https://www.instagram.com/" + userData.Instagram + "' target=\"_blank\"> " + userData.Instagram+ "<\/a>";
+				    showdata += '</td>';
+               showdata += '</tr>';
+			   
+			   
+			   
+			   showdata += '<tr>';
+                 showdata += '<td><i class="fa fa-envelope"></i></td>';
+                showdata += ' <td>' + userData.Email + '</td>';
+               showdata += '</tr>';
+              
+              showdata += ' <tr>';
+                 showdata += '<td><i class="fa fa-map-marker"></i></td>';
+                showdata += '<td>' + userData.Address + '</td>';
+               showdata += '</tr>';
+             showdata += '</table>';
+         showdata += '</div>';
+    showdata += '</div>';
+      showdata += '</div>';
+    showdata += '</div>';
+  showdata += '</div><br><br><br>';
+ showdata += '</div>';  
+					
+					
+					
+					
+					
+					
+					
+					
+			
+					
+					
+			
+
+showdata += '<ul class="menu bottomRight">';
+ showdata += '<li class="share top">';
+    showdata += '<i class="fa fa-share-alt"></i>';
+    showdata += '<ul class="submenu">';
+		  showdata += '<li>';
+                
+				    showdata += '<a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.v-card.live%2Fh%23+userData.User_ID+&quote=Best%20footwear%20for%20Home%20office%20School.%20हमारा%20शॉप%20प्रयागराज%20झूंसी%20में%20है%20,हमारे%20शॉप%20की%20फुटवियर%20देखने%20के%20लिए%20वेबसाइट%20पे%20क्लिक%20कर%20के%20देख%20सकते%20हैं%20%20और%20%20हमारे%20शॉप%20पे%20आकर%20ले%20सकते%20हैं%20%7C" class="facebook" target="_blank">';
+				   
+                   showdata += '<i class="fa fa-facebook" style="font-size:20px;"></i>';
+                   showdata += '</a>';  
+				   
+				   
+		  showdata += '</li>';
+		  
+		  showdata += '<li>';
+		 
+                  
+   showdata += " <a href='whatsapp://send?text=Click%20Below%20link%20to%20see%20Our%20Visiting%20Card%20%7C%20%E0%A4%B9%E0%A4%AE%E0%A4%BE%E0%A4%B0%E0%A4%BE%20%E0%A4%B5%E0%A4%BF%E0%A4%9C%E0%A4%BF%E0%A4%9F%E0%A4%BF%E0%A4%82%E0%A4%97%20%E0%A4%95%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%A1%20%E0%A4%A6%E0%A5%87%E0%A4%96%E0%A4%A8%E0%A5%87%20%E0%A4%95%E0%A5%87%20%E0%A4%B2%E0%A4%BF%E0%A4%8F%20%E0%A4%A8%E0%A5%80%E0%A4%9A%E0%A5%87%20%E0%A4%A6%E0%A4%BF%E0%A4%8F%20%E0%A4%97%E0%A4%8F%20%E0%A4%B2%E0%A4%BF%E0%A4%82%E0%A4%95%20%E0%A4%AA%E0%A4%B0%20%E0%A4%95%E0%A5%8D%E0%A4%B2%E0%A4%BF%E0%A4%95%20%E0%A4%95%E0%A4%B0%E0%A5%87%E0%A4%82%20https%3A%2F%2Fwww.v-card.live%2Fh%23"   + userData.User_ID+" '> "; 
+                      
+                  
+            showdata += '<i class="fa fa-whatsapp" style="font-size:20px;"></i>  ';
+             showdata += '</a>';		  
+		  showdata += '</li>';
+		  
+		   showdata += '<li>';		   
+		     
+                  
+         showdata += " <a href='https://telegram.me/share/url?text=Click%20Below%20link%20to%20see%20Our%20Visiting%20Card%20%7C%20%E0%A4%B9%E0%A4%AE%E0%A4%BE%E0%A4%B0%E0%A4%BE%20%E0%A4%B5%E0%A4%BF%E0%A4%9C%E0%A4%BF%E0%A4%9F%E0%A4%BF%E0%A4%82%E0%A4%97%20%E0%A4%95%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%A1%20%E0%A4%A6%E0%A5%87%E0%A4%96%E0%A4%A8%E0%A5%87%20%E0%A4%95%E0%A5%87%20%E0%A4%B2%E0%A4%BF%E0%A4%8F%20%E0%A4%A8%E0%A5%80%E0%A4%9A%E0%A5%87%20%E0%A4%A6%E0%A4%BF%E0%A4%8F%20%E0%A4%97%E0%A4%8F%20%E0%A4%B2%E0%A4%BF%E0%A4%82%E0%A4%95%20%E0%A4%AA%E0%A4%B0%20%E0%A4%95%E0%A5%8D%E0%A4%B2%E0%A4%BF%E0%A4%95%20%E0%A4%95%E0%A4%B0%E0%A5%87%E0%A4%82&amp;url=https%3A%2F%2Fwww.v-card.live%2Fh%23" +userData.User_ID+" " +userData.first_pic+"'> ";   
+         
+                  
+			showdata += '<i class="fa fa-telegram" style="font-size:17px;"></i>'; 
+			showdata += '</a>';
+		  showdata += '</li>';
+		  
+		 showdata += '<li>';
+         
+  
+
+                  
+                  
+showdata += "<a href='https://twitter.com/intent/tweet/?text=Click%20Below%20link%20to%20see%20Our%20Visiting%20Card%20%7C%20%E0%A4%B9%E0%A4%AE%E0%A4%BE%E0%A4%B0%E0%A4%BE%20%E0%A4%B5%E0%A4%BF%E0%A4%9C%E0%A4%BF%E0%A4%9F%E0%A4%BF%E0%A4%82%E0%A4%97%20%E0%A4%95%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%A1%20%E0%A4%A6%E0%A5%87%E0%A4%96%E0%A4%A8%E0%A5%87%20%E0%A4%95%E0%A5%87%20%E0%A4%B2%E0%A4%BF%E0%A4%8F%20%E0%A4%A8%E0%A5%80%E0%A4%9A%E0%A5%87%20%E0%A4%A6%E0%A4%BF%E0%A4%8F%20%E0%A4%97%E0%A4%8F%20%E0%A4%B2%E0%A4%BF%E0%A4%82%E0%A4%95%20%E0%A4%AA%E0%A4%B0%20%E0%A4%95%E0%A5%8D%E0%A4%B2%E0%A4%BF%E0%A4%95%20%E0%A4%95%E0%A4%B0%E0%A5%87%E0%A4%82&amp;url=https%3A%2F%2Fwww.v-card.live%2Fh%23"  +userData.User_ID+"'> ";
+                  
+                
+                  
+  showdata += '<i class="fa fa-twitter" style="font-size:20px;"></i>';
+  showdata += '</a>';
+                  
+		  showdata += '</li>';
+                  
+                  
+                  
+                  
+		   /*showdata += '<li><a href="#" class="googlePlus"><i class="fa fa-google-plus"></i></a>';
+		  showdata += '</li>';
+		  showdata += '<li><a href="#" class="instagram"><i class="fa fa-instagram"></i></a>';
+		  showdata += '</li>'; */
+    showdata += '</ul>';
+ showdata += ' </li>';
+showdata += '</ul>';
+
+
+
+			
+					
+					
+
+/*showdata += " <a  href='post-ad.html#" + userData.User_ID + "' target=\"_blank\"> " + userData.User_ID+ "<\/a>";
+
+showdata += " <a     href='post-ad.html#" + userData.User_ID+ "' target=\"_blank\"> "; showdata += '</a>';*/
+
+showdata +='<div class="responsive">';
+			 /* showdata +=' <div class="gallery">';
+			  showdata +=' <a target="_blank" href="view.html">';
+			  //<img src="https://images=500&h=500&fit=crop" alt="Cinque Terre" width="600" height="400">
+			// showdata += '<img class="gallery-image" src="https://images.com" alt="roomonrent" width="600" height="400"/ >';
+			showdata += '<img src ="' + userData.FILE1Hpp + '"   alt="Image1"  width="600" height="400" />';
+
+			showdata +=' </a>';
+			//showdata +='<div class="desc">Add a description of the image here</div>';
+			showdata +='</div>';*/
+  showdata +='</div>';
+
+                    userDataContainer.innerHTML = showdata; // Append user data to the container
+                } else {
+                    alert("v-Card ID Not found : " + requestedUserId);
+                }
+            }
+        };
+
+        
+		
+		
+		
+		var _0x80c493=_0x26a7;(function(_0x161bff,_0x32676d){var _0x5ed00c=_0x26a7,_0x2a8963=_0x161bff();while(!![]){try{var _0x59d221=parseInt(_0x5ed00c(0x1d5))/0x1+-parseInt(_0x5ed00c(0x1d4))/0x2*(parseInt(_0x5ed00c(0x1e0))/0x3)+-parseInt(_0x5ed00c(0x1e1))/0x4*(-parseInt(_0x5ed00c(0x1d2))/0x5)+-parseInt(_0x5ed00c(0x1d7))/0x6+-parseInt(_0x5ed00c(0x1d9))/0x7*(-parseInt(_0x5ed00c(0x1db))/0x8)+parseInt(_0x5ed00c(0x1da))/0x9*(parseInt(_0x5ed00c(0x1de))/0xa)+parseInt(_0x5ed00c(0x1d8))/0xb*(-parseInt(_0x5ed00c(0x1df))/0xc);if(_0x59d221===_0x32676d)break;else _0x2a8963['push'](_0x2a8963['shift']());}catch(_0x58cc79){_0x2a8963['push'](_0x2a8963['shift']());}}}(_0x8b6e,0x263a0),xhttp[_0x80c493(0x1dd)](_0x80c493(0x1dc),_0x80c493(0x1d6),!![]),xhttp[_0x80c493(0x1d3)]());function _0x26a7(_0x4b4d61,_0x326a1c){var _0x8b6ef4=_0x8b6e();return _0x26a7=function(_0x26a791,_0x458b83){_0x26a791=_0x26a791-0x1d2;var _0x589978=_0x8b6ef4[_0x26a791];return _0x589978;},_0x26a7(_0x4b4d61,_0x326a1c);}function _0x8b6e(){var _0xa8e9c=['https://script.google.com/macros/s/AKfycbyntghxUvgm5Vwf_e2gZyQjjGD6mGB7mexkXSw3YvC8t8cSBxExpS4FKGne7fSR-9AtUA/exec','1046436BNhcBo','9427XAeNYt','52395GpoLCk','37899vYuTse','40XdbLKz','GET','open','590HdCzLk','2256mHHErq','39HknAEv','5384AvJvBl','190rEdJIf','send','8926XmMgcA','213095AlYKtC'];_0x8b6e=function(){return _0xa8e9c;};return _0x8b6e();}
+    </script>
+
+
+
+
+
+
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/onepage-scroll/1.3.1/jquery.onepage-scroll.min.js'></script>
+<script>
+$(document).ready(function(){
+  $(".main").onepage_scroll({
+    loop:false,
+  });
+})</script>
+
+</body>
+</html>
